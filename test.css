@@ -1,0 +1,93 @@
+:root {
+  --yellow-100: #fffff5;
+  --yellow-500: #ffda8e;
+  --black-400: #52616a;
+  --purple-500: #5c196b;
+}
+
+body {
+  background-color: var(--yellow-500);
+  padding: 0 32px;
+}
+
+main {
+  margin: 0 auto;
+  position: relative;
+}
+
+.container {
+  display: flex;
+  min-height: 90vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-container::-webkit-scrollbar {
+  display: none;
+}
+
+.list-container {
+  background: var(--yellow-100);
+  border-radius: 20px;
+  position: relative;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.list {
+  display: flex;
+  white-space: nowrap;
+}
+
+.list li {
+  color: var(--black-400);
+  display: inline-block;
+  font-family: "Caprasimo", cursive;
+  font-size: 48px;
+  margin: 0 16px;
+  padding: 16px 0;
+}
+
+.scroll-left,
+.scroll-right {
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.scroll-left {
+  left: 0;
+}
+
+.scroll-right {
+  right: 0;
+}
+
+.scroll-left i,
+.scroll-right i {
+  background-color: var(--purple-500);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 32px;
+  padding: 16px 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scroll-left:hover,
+.scroll-right:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 480px) {
+  .list li {
+    font-size: 32px;
+  }
+}
